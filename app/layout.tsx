@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import LenisSetup from "./Components/LenisSetup/LenisSetup";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,11 +25,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <LenisSetup>
+          {children}
+        </LenisSetup>
       </body>
+
       <Script
         async type="module"
         src="https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/attributes.js"
