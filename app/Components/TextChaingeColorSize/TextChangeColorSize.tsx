@@ -16,17 +16,20 @@ const TextChangeColorSize = () => {
     // const color = useTransform(scrollYProgress, [0, 1], ["blue", "grey"])
 
     const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.6])
-    const y = useTransform(scrollYProgress, [0, 1], [100, 0]) // translate up
-    const weight = useTransform(scrollYProgress, [0, 1], [200, 900]) // font wght
-    const width = useTransform(scrollYProgress, [0, 1], [50, 176])   // font wdth
-    const scale = useTransform(scrollYProgress, [0, 1], [0, 1])    // optional bump
+    const y = useTransform(scrollYProgress, [0, 1], [100, 50]) // translate up
+    const weight = useTransform(scrollYProgress, [0, 1], [900, 200]) // font wght
+    const width = useTransform(scrollYProgress, [0, 1], [176, 50])   // font wdth
+    const scale = useTransform(scrollYProgress, [0, 1], [0, .8])    // optional bump
     const color = useTransform(scrollYProgress, [0, 1], ["rgb(79, 82, 190)", "rgb(41, 47, 51)"])    // color change
+    const textSize = useTransform(scrollYProgress, [0, 1], ["5vw", "15vw"]); // <-- Use this instead
+
+
     // const textSize = useTransform(scrollYProgress, [0, 1], ["1.5rem", "20vw"]); // font size
     return (
-        <div>
+        <div className=''>
             <motion.div
                 ref={ref}
-                className='pt-40 w-full h-[100vh] flex items-center justify-center'
+                className='pt-40 h-[100vh] text-center items-center overflow-hidden'
             >
                 <motion.h1
 
@@ -34,11 +37,11 @@ const TextChangeColorSize = () => {
                         opacity,
                         scale,
                         color,
-
+                        fontSize: textSize,
                         transformStyle: "preserve-3d",
                         fontVariationSettings: `"wght" ${weight.get()},"wdth" ${width.get()}`,
                     }}
-                    className=' font-GeistVariable font-bold flex-1 flex-nowrap will-change-scroll text-[20vw]'
+                    className=' font-GeistVariable font-bold flex-1  will-change-scroll '
                 >EXPERTIRES</motion.h1>
             </motion.div>
         </div>
