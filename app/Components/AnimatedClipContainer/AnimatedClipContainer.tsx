@@ -13,8 +13,8 @@ const AnimatedClipContainer = () => {
     const scaleX = useTransform(scrollYProgress, [.2, .5], [1, 1.01])
 
     return (
-        <div className="relative w-full">
-            <div className="h-screen max-w-lvw flex items-center justify-center bg-gray-100  sticky inset-0.5">
+        <div className="relative w-full h-[200vh]">
+            <div className="max-w-lvw  bg-gray-100  sticky inset-0.5">
                 <div ref={ref} className="h-full w-full flex flex-col items-center justify-center " >
                     <TextHeroAnimated text="REHAM ELSAYED" className="z-10" moveDown={true} />
                     <TextHeroAnimated text="FRONTEND DEVELOPER" className="z-20" moveDown={true} />

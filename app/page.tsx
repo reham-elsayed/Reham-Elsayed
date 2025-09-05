@@ -4,7 +4,7 @@ import AnimatedClipContainer from "./Components/AnimatedClipContainer/AnimatedCl
 import TextChangeColorSize from "./Components/TextChaingeColorSize/TextChangeColorSize";
 export default function Home() {
   return (
-    <main className="flex min-h-[100vh] max-w-lvw m-auto flex-col items-center justify-between p-24 gap-7 ">
+    <main className="flex flex-col min-h-[100vh] max-w-lvw m-auto items-center justify-between p-24 gap-7 ">
 
 
       <AnimatedClipContainer />
