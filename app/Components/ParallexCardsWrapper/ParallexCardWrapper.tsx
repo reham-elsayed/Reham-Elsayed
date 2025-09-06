@@ -3,19 +3,53 @@ import ExpertiseCardContent from '../ExpertiseCardContent/ExpertiseCardContent'
 import cam from '../../../public/cam.svg'
 const ParallexCardWrapper = () => {
     return (
-        <div className='bg-red-500 flex flex-col justify-center items-end relative pt-[9vh] pe-[15vw]'>
-            <div className='flex flex-col items-start'>
-                <div className='flex flex-col sticky top-[25vh] bg-amber-100 rounded-2xl'>
-                    <div className='layout-etiquette-expertise'></div>
+        <div className=''>
+            {/*right side*/}
+            <div className=' relative  '>
+                <div className="relative top-0 w-full h-[300vh]"> {/* makes the page scrollable */}
+                    <div className="sticky top-0 h-screen flex items-center justify-center">
+                        <div className="w-80 h-96 bg-amber-500 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                            Camera 1
+                        </div>
+                        <div className='absolute -z-10 h-screen  top-0 flex justify-center  items-center' >
+                            <div className=' p-[2vw]  w-[80vw] h-[40vw] border-3 border-[#e5e2d633] rounded-[20px]' >
+                                {/*left side*/}
+                                <div className='w-[26vw] h-[26vw]  bg-amber-500'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="sticky top-0 h-screen flex items-center justify-center">
+                        <div className="w-80 h-96 bg-amber-700 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                            Camera 2
+                        </div>
+                    </div>
+                    <div className="sticky top-0 h-screen flex items-center justify-center">
+                        <div className="w-80 h-96 bg-amber-900 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                            Camera 3
+                        </div>
+                    </div>
                 </div>
-
-
             </div>
         </div>
-    )
+    );
 }
 
 export default ParallexCardWrapper
+
+{/*container*/ }
+// <div className='flex justify-center  relative p-[2vw] overflow-hidden' >
+//     {/*left side*/}
+//     <div className='w-[26vw] h-[26vw]  bg-amber-50'>
+
+//     </div>
+//     {/*right side*/}
+//     <div className='flex flex-col items-start  flex-1  bg-amber-100  overflow-hidden'>
+
+
+
+
+
+//     </div>
 //   <div className='wrapper-all-mea__expertise'>
 //                 <div className='layout-etiquette-expertise-first'>
 //                     <div className='layout-etiquette-expertise'>
