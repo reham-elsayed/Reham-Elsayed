@@ -51,6 +51,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.pos {
+  inset: -6vw 0 auto -31vw;
+}
+
 .wrapper-all-expertises {
   flex-direction: column;
   justify-content: center;
