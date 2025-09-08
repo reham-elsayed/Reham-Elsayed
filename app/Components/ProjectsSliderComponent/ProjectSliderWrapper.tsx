@@ -10,21 +10,24 @@ const ProjectSliderWrapper = () => {
 
     const [scope, animate] = useAnimate()
     const handleClick = () => {
-        setIsDark(prev => !prev)
-        if (isDark) {
-            animate(scope.current, { backgroundColor: "#292f33" }, { duration: 0.8 });
+        const nextIsDark = !isDark
+        setIsDark(nextIsDark)
 
-        }
-        animate(scope.current, { backgroundColor: "#e5e2d6" }, { duration: 0.8 });
+        animate(
+            scope.current,
+            {
+                backgroundColor: nextIsDark ? "#2c3236" : "#e5e2d6",
+            },
+            { duration: 0.8 }
+        )
+    }
 
-    };
     return (
-        <div
-            ref={scope}
-            onClick={handleClick}
-        >
-
-            <TextChangeColorSize colorStart={isDark ? "rgb(79, 82, 190)" : "rgb(79, 82, 190)"} colorEnd={isDark ? "rgb(79, 82, 190)" : "rgb(41, 47, 51)"} />
+        <div ref={scope} onClick={handleClick} className="min-h-screen ">
+            <TextChangeColorSize
+                colorStart={isDark ? "rgb(79, 82, 190)" : "#292f33"}
+                colorEnd={isDark ? "rgb(79, 82, 190)" : "#292f33"}
+            />
 
             <div className='layout-vhs-home'></div>
 

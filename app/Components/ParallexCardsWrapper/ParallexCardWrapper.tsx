@@ -10,8 +10,8 @@ const ParallexCardWrapper = () => {
         offset: ["start end", "end start"],
     })
 
-    const background = useTransform(scrollYProgress, [0.5, 0.7, 1],
-        ["#e5e2d6", "#8a8d87", "#2c3236"])
+    const background = useTransform(scrollYProgress, [0.5, 0.7],
+        ["#e5e2d6", "#2c3236"])
     return (
         <motion.section
             ref={ref}
