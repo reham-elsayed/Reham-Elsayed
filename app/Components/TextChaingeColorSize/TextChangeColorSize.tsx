@@ -1,30 +1,24 @@
 'use client'
 import { useScroll, useTransform, motion } from 'framer-motion';
 import React, { useRef } from 'react'
-
-const TextChangeColorSize = () => {
+type TextChaingeColorSizeProps = {
+    colorStart: string;
+    colorEnd: string;
+}
+const TextChangeColorSize = ({ colorStart, colorEnd }: TextChaingeColorSizeProps) => {
     const ref = useRef(null)
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["start end", "end end"]
     })
 
-    // Map scroll progress → animation values
-    // const scale = useTransform(scrollYProgress, [0, 1], [1.5, .8]);//scale down
-    // const width = useTransform(scrollYProgress, [0, 1, 1.5], [160, 100, 85]); // font width
-    // const opacity = useTransform(scrollYProgress, [0, 1], [1, .8]); // fade out
-    // const color = useTransform(scrollYProgress, [0, 1], ["blue", "grey"])
-
     const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.6])
     const y = useTransform(scrollYProgress, [0, 1], [100, 50]) // translate up
     const weight = useTransform(scrollYProgress, [0, 1], [900, 200]) // font wght
     const width = useTransform(scrollYProgress, [0, 1], [176, 50])   // font wdth
     const scale = useTransform(scrollYProgress, [0, 1], [0, .8])    // optional bump
-    const color = useTransform(scrollYProgress, [0, 1], ["rgb(79, 82, 190)", "rgb(41, 47, 51)"])    // color change
+    const color = useTransform(scrollYProgress, [0, 1], [colorStart, colorEnd])    // color change
     const textSize = useTransform(scrollYProgress, [0, 1], ["5vw", "15vw"]); // <-- Use this instead
-
-
-    // const textSize = useTransform(scrollYProgress, [0, 1], ["1.5rem", "20vw"]); // font size
     return (
         <div className=''>
             <motion.div

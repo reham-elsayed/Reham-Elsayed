@@ -1,9 +1,6 @@
 'use client'
 import React from 'react'
-import ExpertiseCardContent from '../ExpertiseCardContent/ExpertiseCardContent'
-
 import { useScroll, useTransform, motion } from 'framer-motion'
-import ParallexCardSideImage from './ParallexCardSideImage'
 import ParallexCards from './ParallexCards'
 import TextChangeColorSize from '../TextChaingeColorSize/TextChangeColorSize'
 const ParallexCardWrapper = () => {
@@ -13,13 +10,14 @@ const ParallexCardWrapper = () => {
         offset: ["start end", "end start"],
     })
 
-    const background = useTransform(scrollYProgress, [0, 1], ['#e5e2d6', '#292f33'])
+    const background = useTransform(scrollYProgress, [0.5, 0.7, 1],
+        ["#e5e2d6", "#8a8d87", "#2c3236"])
     return (
         <motion.section
             ref={ref}
             style={{ backgroundColor: background }}
             className='relative '>
-            <TextChangeColorSize />
+            <TextChangeColorSize colorStart="rgb(79, 82, 190)" colorEnd="rgb(41, 47, 51)" />
             <ParallexCards />
         </motion.section>
 
