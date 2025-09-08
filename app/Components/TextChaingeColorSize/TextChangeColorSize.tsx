@@ -18,12 +18,12 @@ const TextChangeColorSize = ({ colorStart, colorEnd }: TextChaingeColorSizeProps
     const width = useTransform(scrollYProgress, [0, 1], [176, 50])   // font wdth
     const scale = useTransform(scrollYProgress, [0, 1], [0, .8])    // optional bump
     const color = useTransform(scrollYProgress, [0, 1], [colorStart, colorEnd])    // color change
-    const textSize = useTransform(scrollYProgress, [0, 1], ["5vw", "15vw"]); // <-- Use this instead
+    const textSize = useTransform(scrollYProgress, [0, 1], ["5vw", "15vw"]); // text size
     return (
         <div className=''>
             <motion.div
                 ref={ref}
-                className='pt-40 h-[100vh] text-center items-center overflow-hidden'
+                className='pt-40 h-[100vh] text-center items-center overflow-hidden container'
             >
                 <motion.h1
 

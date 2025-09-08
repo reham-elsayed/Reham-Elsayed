@@ -13,23 +13,25 @@ const AnimatedClipContainer = () => {
     const scaleX = useTransform(scrollYProgress, [.2, .5], [1, 1.01])
 
     return (
-        <div className="relative w-full h-[200vh]">
-            <div className="max-w-lvw  bg-gray-100  sticky inset-0.5">
-                <div ref={ref} className="h-full w-full flex flex-col items-center justify-center " >
-                    <TextHeroAnimated text="REHAM ELSAYED" className="z-10" moveDown={true} />
-                    <TextHeroAnimated text="FRONTEND DEVELOPER" className="z-20" moveDown={true} />
-                    <motion.div
-                        style={{ height: scrollY1, scaleX: scaleX }}
-                        transition={{ duration: 10 }}
-                        id="clip-container"
-                        className="w-full flex items-center justify-center bg-amber-400 z-50"
-                    >
-                        <motion.h2
-                            className="text-3xl font-bold mt-4 ">Scroll to Animate</motion.h2>
+        <div className="bg-gray-100 ">
+            <div className="relative  h-[200vh] container mx-auto">
+                <div className="   sticky inset-0.5">
+                    <div ref={ref} className="h-full w-full flex flex-col items-center justify-center " >
+                        <TextHeroAnimated text="REHAM ELSAYED" className="z-10" moveDown={true} />
+                        <TextHeroAnimated text="FRONTEND DEVELOPER" className="z-20" moveDown={true} />
+                        <motion.div
+                            style={{ height: scrollY1, scaleX: scaleX }}
+                            transition={{ duration: 10 }}
+                            id="clip-container"
+                            className="w-full flex items-center justify-center bg-amber-400 z-50"
+                        >
+                            <motion.h2
+                                className="text-3xl font-bold mt-4 ">Scroll to Animate</motion.h2>
 
-                    </motion.div>
-                    <TextHeroAnimated text="REHAM ELSAYED" moveDown={false} className="z-20" />
-                    <TextHeroAnimated text="FRONTEND DEVELOPER" moveDown={false} className="z-10" />
+                        </motion.div>
+                        <TextHeroAnimated text="REHAM ELSAYED" moveDown={false} className="z-20" />
+                        <TextHeroAnimated text="FRONTEND DEVELOPER" moveDown={false} className="z-10" />
+                    </div>
                 </div>
             </div>
         </div>

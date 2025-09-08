@@ -2,6 +2,7 @@
 import React from 'react'
 import TextChangeColorSize from '../TextChaingeColorSize/TextChangeColorSize'
 import { useAnimate } from 'framer-motion'
+import ProjectSliderSlider from './ProjectSliderSlider'
 
 const ProjectSliderWrapper = () => {
 
@@ -29,7 +30,7 @@ const ProjectSliderWrapper = () => {
                 colorEnd={isDark ? "rgb(79, 82, 190)" : "#292f33"}
             />
 
-            <div className='layout-vhs-home'></div>
+            <ProjectSliderSlider />
 
         </div>
 
