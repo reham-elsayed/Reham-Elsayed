@@ -3,14 +3,14 @@ import React from 'react'
 import ExpertiseCardContent from '../ExpertiseCardContent/ExpertiseCardContent'
 import cam from '../../../public/cam.svg'
 import { useScroll, useTransform, motion } from 'framer-motion'
+import ParallexCardSideImage from './ParallexCardSideImage'
 const ParallexCardWrapper = () => {
     const { scrollYProgress } = useScroll()
     const rotate = useTransform(scrollYProgress, [0, 1], ['7deg', '0deg'])
     const scale = useTransform(scrollYProgress, [0, 1], [1.2, 1])
     const rotateop = useTransform(scrollYProgress, [0, 1.5], ['-7deg', '0deg'])
+
     return (
-
-
         <div className='flex flex-col items-end pe-[15vw] pt-[9vh] relative justify-end   perspective-distant '>
             <div className="flex flex-col items-start"> {/* makes the page scrollable */}
                 <div className="sticky top-[25vh] h-screen flex flex-col ">
@@ -25,13 +25,7 @@ const ParallexCardWrapper = () => {
                         </div>
 
                         {/*left side*/}
-                        <div className='w-[32vw] h-[32vw] flex relative justify-center items-center top-[1vw]   '>
-                            <div className='reflect'></div>
-                            <div className='bobine_betacam '></div>
-                            <div className='support-bobine_betacam'></div>
-                            <div className='details-support_betacam '></div>
-                            <div className='interior-bobine'></div>
-                        </div>
+                        <ParallexCardSideImage />
                     </div>
 
                 </div>
