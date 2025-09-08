@@ -150,3 +150,13 @@ body {
 .wrapper-parallex {
   height: 45vh;
 }
+
+.layout-vhs-home {
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  flex-flow: column;
+  width: 100%;
+  padding-top: 3vw;
+  padding-bottom: 2.4vw;
+  display: flex;
+}

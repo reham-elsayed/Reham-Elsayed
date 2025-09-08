@@ -3,14 +3,15 @@ import { motion } from "framer-motion";
 import AnimatedClipContainer from "./Components/AnimatedClipContainer/AnimatedClipContainer";
 import TextChangeColorSize from "./Components/TextChaingeColorSize/TextChangeColorSize";
 import ParallexCardWrapper from "./Components/ParallexCardsWrapper/ParallexCardWrapper";
+import ProjectSliderWrapper from "./Components/ProjectsSliderComponent/ProjectSliderWrapper";
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-[100vh] max-w-lvw m-auto  p-24 gap-7 ">
+    <main className="flex flex-col min-h-[100vh] ">
 
 
       <AnimatedClipContainer />
-      <TextChangeColorSize />
       <ParallexCardWrapper />
+      <ProjectSliderWrapper />
     </main>
   );
 }
