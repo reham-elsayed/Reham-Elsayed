@@ -168,14 +168,6 @@ body {
   display: flex;
 }
 
-.cl-list-wrapper-small {
-  flex-flow: row;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  display: flex;
-}
 
 .cl-list-wrapper-small {
   flex-flow: row;

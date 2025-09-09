@@ -7,23 +7,29 @@ import TextHeroAnimated from "../TextHeroAnimated/TestHeroAnimated"
 const AnimatedClipContainer = () => {
 
     const ref = useRef<HTMLDivElement>(null)
-    const { scrollYProgress } = useScroll()
+    const { scrollYProgress } = useScroll(
+        {
+            target: ref,
+            offset: ["start end", "end end"],
+
+        }
+    )
     const maxHeight = typeof window !== "undefined" ? window.innerHeight * 0.5 : 400
     const scrollY1 = useTransform(scrollYProgress, [0, 0.2], [10, maxHeight])
-    const scaleX = useTransform(scrollYProgress, [.2, .5], [1, 1.01])
+    const scaleX = useTransform(scrollYProgress, [0, .5], [1, 1.1])
 
     return (
         <div className="bg-gray-100 ">
             <div className="relative  h-[200vh] container mx-auto">
-                <div className="   sticky inset-0.5">
-                    <div ref={ref} className="h-full w-full flex flex-col items-center justify-center " >
+                <div className="   sticky inset-0 w-full overflow-hidden ">
+                    <div ref={ref} className="h-full  flex flex-col items-center justify-center " >
                         <TextHeroAnimated text="REHAM ELSAYED" className="z-10" moveDown={true} />
                         <TextHeroAnimated text="FRONTEND DEVELOPER" className="z-20" moveDown={true} />
                         <motion.div
                             style={{ height: scrollY1, scaleX: scaleX }}
                             transition={{ duration: 10 }}
                             id="clip-container"
-                            className="w-full flex items-center justify-center bg-amber-400 z-50"
+                            className=" flex items-center justify-center bg-amber-400 z-50 w-[80vw] mx-auto"
                         >
                             <motion.h2
                                 className="text-3xl font-bold mt-4 ">Scroll to Animate</motion.h2>

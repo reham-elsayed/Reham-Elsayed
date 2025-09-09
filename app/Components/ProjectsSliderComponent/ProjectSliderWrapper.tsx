@@ -30,7 +30,7 @@ const ProjectSliderWrapper = () => {
                 colorEnd={isDark ? "rgb(79, 82, 190)" : "#292f33"}
             />
 
-            <ProjectSliderSlider />
+            {/* <ProjectSliderSlider /> */}
 
         </div>
 

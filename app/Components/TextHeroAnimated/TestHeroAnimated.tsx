@@ -10,7 +10,13 @@ export default function ScrollAnimatedText({ text, className, moveDown }: Props)
     const ref = useRef(null);
 
     // Track scroll progress relative to this element
-    const { scrollYProgress } = useScroll()
+    const { scrollYProgress } = useScroll(
+        {
+            target: ref,
+            offset: ["start end", "end start"],
+
+        }
+    )
 
     // Map scroll progress → animation values
     const y = useTransform(scrollYProgress, [.5, 1], [0, 150]);//translate down
@@ -19,7 +25,9 @@ export default function ScrollAnimatedText({ text, className, moveDown }: Props)
     const width = useTransform(scrollYProgress, [0, 1, 1.5], [160, 100, 85]); // font width
     const fontSize = useTransform(scrollYProgress, [0, 1], ["2.5rem", "1.8rem"]); // font size
     return (
-        <section className={`${className} bg-gray-100 `}>
+        <section
+
+            className={`${className} bg-gray-100 `}>
             {/* Big scroll space so you can see effect */}
             <motion.div
                 ref={ref}
