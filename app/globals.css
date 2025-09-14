@@ -205,3 +205,25 @@ body {
   display: flex;
   position: relative;
 }
+
+
+
+.wrapper-h1 {
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  flex-wrap: wrap;
+  flex: none;
+  justify-content: center;
+  align-self: stretch;
+  align-items: center;
+  margin-bottom: -.5rem;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-txt {
+  white-space: nowrap;
+  margin-left: -.2vw;
+  line-height: 1.2;
+}
