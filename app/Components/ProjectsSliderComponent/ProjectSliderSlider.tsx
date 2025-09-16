@@ -8,26 +8,31 @@ const ProjectSliderSlider = () => {
         target: ref,
 
     })
-    const x = useTransform(scrollYProgress, [0, 1], ["-110%", "120%"])
+    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-120%"])
     return (
-        <div className='min-h-screen'>
-            <div
-                ref={ref}
-                className='w-layout-blockcontainer '>
-                <div className='layout-vhs-home'>
-                    <div className='cl-list-wrapper-small'>
+        <div
 
-                        {/* responsive div here*/}
-                        <div className='cl-list-wrapper-small '>{/* animation here*/}
-                            <motion.div
-                                style={{ x }}
-                                className='cl-layout-vhs-small  overflow-hidden '>
-                                {Array(100).fill(null).map((_, i) => <div key={i} className='cl-list-vhs-small'> data</div>)}
+            className='h-screen overflow-hidden w-full flex flex-col justify-center items-stretch'>
+            <div className='w-full w-layout-blockcontainer h-[45vh] flex '>
+                <div
+                    ref={ref}
+                    className='relative h-full  bg-red-500'>
+                    <motion.div
+                        style={{ x }}
+                        className=' relative flex justify-center h-full items-stretch mb-4  bg-amber-700'>
+                        {Array(100).fill(null).map((_, i) => <div key={i} className='cl-list-vhs-small  hover:scale-x-105'>
+                            <div className='flex items-center justify-center '>
+                                logo
 
-                            </motion.div>
-                        </div>
-                    </div>
+                            </div>
+                            <div className=' flex-1 flex flex-col items-center justify-center flex-nowrap  p-5 writing'> project name</div>
+                            <div className='flex items-center justify-center'> react</div>
+                            <div className='absolute -z-10 inset-0 bg-gray-100 border-2 border-black rounded-lg '></div>
+                        </div>)}
+
+                    </motion.div>
                 </div>
+
             </div>
         </div>
     )

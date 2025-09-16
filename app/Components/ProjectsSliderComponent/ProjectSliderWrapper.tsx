@@ -3,6 +3,7 @@ import React from 'react'
 import TextChangeColorSize from '../TextChaingeColorSize/TextChangeColorSize'
 import { useAnimate } from 'framer-motion'
 import ProjectSliderSlider from './ProjectSliderSlider'
+import Link from 'next/link'
 
 const ProjectSliderWrapper = () => {
 
@@ -30,8 +31,22 @@ const ProjectSliderWrapper = () => {
                 colorEnd={isDark ? "rgb(79, 82, 190)" : "#292f33"}
             />
 
-            {/* <ProjectSliderSlider /> */}
-
+            <ProjectSliderSlider />
+            <div>
+                <div className='flex justify-between items-center h-[10vw] bg-cyan-200'>
+                    <h2>ALL PROJECTS</h2>
+                    <div>
+                        <Link href="#" className='btn-arrow w-inline-block perspective-distant hover: '>
+                            <div className='txt-btn__arrow-1 hover:scale-75 hover:translate-full hover:rotate-y-90 duration-500 transform-3d '>
+                                DISCOVER
+                            </div>
+                            <div className='txt-btn__arrow-2'>
+                                DISCOVER
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+            </div>
         </div>
 
     )
