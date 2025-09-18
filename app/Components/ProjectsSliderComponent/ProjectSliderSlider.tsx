@@ -3,7 +3,10 @@ import { useScroll, useTransform, motion } from 'framer-motion'
 import React, { useRef } from 'react'
 import DiscoverButton from '../DiscoverButton/DiscoverButton'
 
-const ProjectSliderSlider = () => {
+type Props = {
+    isDark?: boolean;
+}
+const ProjectSliderSlider = ({ isDark }: Props) => {
     const ref = useRef(null)
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -13,7 +16,7 @@ const ProjectSliderSlider = () => {
     return (
         <div
 
-            className='h-screen overflow-hidden w-full flex flex-col justify-center items-stretch'>
+            className='h-screen overflow-hidden w-full flex flex-col justify-center items-stretch gap-6 pt-[3vw] pb-[2.4vw]'>
             <div className='w-full w-layout-blockcontainer h-[45vh] flex '>
                 <div
                     ref={ref}
@@ -35,7 +38,14 @@ const ProjectSliderSlider = () => {
                 </div>
 
             </div>
-            <DiscoverButton />
+            <div className='container mx-auto'>
+                <div className='flex justify-between items-center self-stretch'>
+                    <h2>ALL PROJECTS</h2>
+                    <div className='flex justify-end items-center flex-1 text-[1.2vw] align-top '>
+                        <DiscoverButton isDark={isDark} />
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

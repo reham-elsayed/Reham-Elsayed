@@ -282,8 +282,12 @@ a {
 .txt-btn__arrow-2 {
   border: var(--border-2) solid var(--black);
   transform-origin: 50% 0;
-  color: var(--black);
+
   white-space: nowrap;
   border-radius: 2px;
   padding: .3em;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
