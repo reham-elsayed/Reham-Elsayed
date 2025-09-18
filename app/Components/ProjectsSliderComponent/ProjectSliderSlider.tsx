@@ -1,6 +1,7 @@
 'use client'
 import { useScroll, useTransform, motion } from 'framer-motion'
 import React, { useRef } from 'react'
+import DiscoverButton from '../DiscoverButton/DiscoverButton'
 
 const ProjectSliderSlider = () => {
     const ref = useRef(null)
@@ -16,7 +17,7 @@ const ProjectSliderSlider = () => {
             <div className='w-full w-layout-blockcontainer h-[45vh] flex '>
                 <div
                     ref={ref}
-                    className='relative h-full  bg-red-500'>
+                    className='relative h-full'>
                     <motion.div
                         style={{ x }}
                         className=' relative flex justify-center h-full items-stretch mb-4  bg-amber-700'>
@@ -34,6 +35,7 @@ const ProjectSliderSlider = () => {
                 </div>
 
             </div>
+            <DiscoverButton />
         </div>
     )
 }
