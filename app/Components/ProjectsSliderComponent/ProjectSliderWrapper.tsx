@@ -26,7 +26,7 @@ const ProjectSliderWrapper = () => {
     }
 
     return (
-        <div ref={scope} onClick={handleClick} className="min-h-screen ">
+        <div ref={scope} onClick={handleClick} className="min-h-screen bg-[#e5e2d6]">
             <TextChangeColorSize
                 colorStart={isDark ? "rgb(79, 82, 190)" : "#292f33"}
                 colorEnd={isDark ? "rgb(79, 82, 190)" : "#292f33"}
