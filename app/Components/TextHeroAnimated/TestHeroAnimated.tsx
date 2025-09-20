@@ -1,6 +1,7 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+
 type Props = {
     text: string;
     className?: string;
@@ -32,7 +33,7 @@ export default function ScrollAnimatedText({ text, className, moveDown }: Props)
             <motion.div
 
                 style={{
-                    y,
+                    y: invertedY,
                     fontVariationSettings: `"wght" ${weight}, "wdth" ${width}`,
                     fontFamily: "Geist Variable, sans-serif", // must be a variable font
                     fontSize: fontSize,
