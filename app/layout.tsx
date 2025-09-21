@@ -3,15 +3,13 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import LenisSetup from "./Components/LenisSetup/LenisSetup";
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import { Roboto_Flex } from 'next/font/google'
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const robotoFlex = Roboto_Flex({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto-flex',
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${robotoFlex.variable} antialiased`}
       >
         <LenisSetup>
           {children}

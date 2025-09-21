@@ -1,9 +1,22 @@
 'use client'
 import Lenis from 'lenis'
-import React, { Children, useEffect } from 'react'
+import React, { useEffect, createContext, useContext } from 'react'
+
+type LenisContextType = {
+    lenis: Lenis | null
+    stop: () => void
+    start: () => void
+}
+
+const LenisContext = createContext<LenisContextType | null>(null)
+
+export const useLenis = () => {
+    const lenisContext = useContext(LenisContext)
+    if (!lenisContext) throw new Error("Lenis is not setup")
+    return lenisContext
+}
 
 const LenisSetup = ({ children }: { children: React.ReactNode }) => {
-    // ✅ Lenis stored in a ref
     const lenisRef = React.useRef<Lenis | null>(null)
 
     useEffect(() => {
@@ -22,8 +35,17 @@ const LenisSetup = ({ children }: { children: React.ReactNode }) => {
         }
     }, [])
 
-    return <> {children}</>
-
+    return (
+        <LenisContext.Provider
+            value={{
+                lenis: lenisRef.current,
+                stop: () => lenisRef.current?.stop(),
+                start: () => lenisRef.current?.start(),
+            }}
+        >
+            {children}
+        </LenisContext.Provider>
+    )
 }
 
 export default LenisSetup
