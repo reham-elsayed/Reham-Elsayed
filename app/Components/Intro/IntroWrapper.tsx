@@ -1,20 +1,33 @@
 'use client'
 import React, { useEffect } from 'react'
 import { useLenis } from '../LenisSetup/LenisSetup'
-
+import FolderCoverComponent from '../FolderCoverComponent/FolderCoverComponent'
+import { motion, useAnimate } from 'framer-motion'
 const IntroWrapper = () => {
+
     const { stop, start } = useLenis()
-
+    const [scope, animate] = useAnimate()
     // useEffect(() => {
-    //     stop()
-    //     const timer = setTimeout(() => start(), 30000)
-    //     return () => clearTimeout(timer)
-    // }, [stop, start])
+    //     async function handleOnLoadAnimation() {
+    //         await animate(scope.current, { translateY: 1500, opacity: .5 }, { duration: 5 })
+    //     }
+    //     handleOnLoadAnimation()
+    // }, [animate])
 
-    return (<div>
-        <button onClick={() => { stop() }}>stop</button>
-        <button onClick={() => { start() }}>start</button>
-        <h1 className='h-screen'>Scroll is disabled for 3s</h1>
+    useEffect(() => {
+        stop()
+        const timer = setTimeout(() => start(), 50000)
+        return () => clearTimeout(timer)
+    }, [stop, start])
+
+    return (<div className='relative overflow-hidden'>
+
+        <motion.div
+            ref={scope}
+            className=''
+        >
+            <FolderCoverComponent />
+        </motion.div>
     </div>)
 
 
