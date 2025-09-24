@@ -8,7 +8,6 @@ import ProjectSliderWrapper from "./Components/ProjectsSliderComponent/ProjectSl
 export default function Home() {
   return (
     <main className=" min-h-[100vh] relative">
-
       <IntroWrapper />
       <AnimatedClipContainer />
       <ParallexCardWrapper />
