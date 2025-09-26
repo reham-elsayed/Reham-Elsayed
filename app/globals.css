@@ -291,3 +291,15 @@ a {
 .nowrap {
   white-space: nowrap;
 }
+
+.polygon {
+  clip-path: polygon(0% 50%,
+      /* left middle */
+      100% 50%,
+      /* right middle */
+      75% 100%,
+      /* bottom right */
+      25% 100%
+      /* bottom left */
+    );
+}
