@@ -1,4 +1,5 @@
 
+'use client'
 import React from 'react'
 import Percent from '../Icons/Percent';
 const Counter = () => {

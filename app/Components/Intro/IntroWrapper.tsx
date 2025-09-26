@@ -15,8 +15,12 @@ const IntroWrapper = () => {
         document.body.style.overflow = "hidden"
         async function handleOnLoadAnimation() {
             stop()
-            await animate(scope.current, { translateY: 1500, opacity: .5 }, { duration: 5 })
-            await animate1(scope1.current, { translateY: -1500, rotate: "-5deg", opacity: .5 }, { duration: 5 })
+            // await animate(scope.current, { translateY: 1500, opacity: .5 }, { duration: 5 })
+            // await animate1(scope1.current, { translateY: -1500, rotate: "-5deg", opacity: .5 }, { duration: 2 })
+            await Promise.all([
+                animate(scope.current, { translateY: 1500 }, { duration: 5 }),
+                animate1(scope1.current, { translateY: -1500, rotate: "-5deg" }, { duration: 7 }),
+            ]);
             await animate2(scope2.current, { translateY: 1500 }, { duration: 5, delay: 10, onComplete: () => setShow(false) })
             start()
             document.body.style.overflow = ""
@@ -33,7 +37,7 @@ const IntroWrapper = () => {
                 <div className={`absolute inset-0 overflow-hidden h-screen w-full block ${display}`}>
                     <motion.div
                         ref={scope1}
-                        className='z-30 absolute inset-0 bg-black'
+                        className='z-30 absolute inset-0 bg-[var(--black)]'
                     >
 
                     </motion.div>
