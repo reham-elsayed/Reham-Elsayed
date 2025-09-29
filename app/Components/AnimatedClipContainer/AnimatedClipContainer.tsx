@@ -2,9 +2,7 @@
 
 import { motion, useAnimate, useScroll, useTransform } from "framer-motion"
 import React, { useRef } from "react"
-import TextHeroAnimated from "../TextHeroAnimated/TestHeroAnimated"
 import hero from "../../../public/heroContent.json"
-import IntroWrapper from "../Intro/IntroWrapper"
 const AnimatedClipContainer = () => {
 
     const ref = useRef<HTMLDivElement>(null)

@@ -5,12 +5,13 @@ import FolderCoverComponent from "./Components/FolderCoverComponent/FolderCoverC
 import Footer from "./Components/Footer/Footer";
 import IntroHeader from "./Components/Intro/IntroHeader";
 import IntroWrapper from "./Components/Intro/IntroWrapper";
+import LabelHeader from "./Components/LabelsHeader/LabelHeader";
 import ParallexCardWrapper from "./Components/ParallexCardsWrapper/ParallexCardWrapper";
 import ProjectSliderWrapper from "./Components/ProjectsSliderComponent/ProjectSliderWrapper";
 export default function Home() {
   return (
     <main className=" min-h-[100vh] relative">
-      <IntroHeader />
+      <LabelHeader />
       {/* <IntroWrapper />
       <AnimatedClipContainer />
       <ParallexCardWrapper />

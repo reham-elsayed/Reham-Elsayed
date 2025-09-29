@@ -303,3 +303,13 @@ a {
       /* bottom left */
     );
 }
+
+.logo-svg {
+  width: clamp(210px, 15vw, 260px);
+  max-height: 160px;
+  /* keeps aspect ratio from the viewBox */
+}
+
+.yellow-label {
+  translateX: 1000px
+}
